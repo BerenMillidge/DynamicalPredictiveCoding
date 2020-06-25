@@ -11,7 +11,7 @@ condition="amortisation_fixed_predictions"
 for s in range(seeds):
     lpath = log_path + "/"+str(exp_name) +"_"+condition + "/" + str(s)
     spath = save_path + "/" + str(exp_name) +"_"+condition + "/" + str(s)
-    final_call = base_call + " --logdir " + str(lpath) + " --savedir " + str(spath) + "--with_amortisation True --fixed_predictions True"
+    final_call = base_call + " --logdir " + str(lpath) + " --savedir " + str(spath) + " --with_amortisation True --fixed_predictions True"
     print(final_call)
     print(final_call, file=output_file)
 
@@ -19,7 +19,7 @@ condition="amortisation_no_fixed_predictions"
 for s in range(seeds):
     lpath = log_path + "/"+str(exp_name) +"_"+condition + "/" + str(s)
     spath = save_path + "/" + str(exp_name) +"_"+condition + "/" + str(s)
-    final_call = base_call + " --logdir " + str(lpath) + " --savedir " + str(spath) + "--with_amortisation True --fixed_predictions False"
+    final_call = base_call + " --logdir " + str(lpath) + " --savedir " + str(spath) + " --with_amortisation True --fixed_predictions False"
     print(final_call)
     print(final_call, file=output_file)
 
@@ -27,7 +27,7 @@ condition="no_amortisation_fixed_predictions"
 for s in range(seeds):
     lpath = log_path + "/"+str(exp_name) +"_"+condition + "/" + str(s)
     spath = save_path + "/" + str(exp_name) +"_"+condition + "/" + str(s)
-    final_call = base_call + " --logdir " + str(lpath) + " --savedir " + str(spath) + "--with_amortisation False --fixed_predictions True"
+    final_call = base_call + " --logdir " + str(lpath) + " --savedir " + str(spath) + " --with_amortisation False --fixed_predictions True"
     print(final_call)
     print(final_call, file=output_file)
 
@@ -35,7 +35,7 @@ condition="no_amortisation_no_fixed_predictions"
 for s in range(seeds):
     lpath = log_path + "/"+str(exp_name) +"_"+condition + "/" + str(s)
     spath = save_path + "/" + str(exp_name) +"_"+condition + "/" + str(s)
-    final_call = base_call + " --logdir " + str(lpath) + " --savedir " + str(spath) + "--with_amortisation False --fixed_predictions False"
+    final_call = base_call + " --logdir " + str(lpath) + " --savedir " + str(spath) + " --with_amortisation False --fixed_predictions False"
     print(final_call)
     print(final_call, file=output_file)
 
