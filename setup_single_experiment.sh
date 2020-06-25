@@ -31,7 +31,7 @@ set -e
 echo "Setting up log files"
 USER=s1686853
 SCRATCH_DISK=/disk/scratch
-log_path=${SCRATCH_DISK}/${USER}/relaxed_predictive_coding
+log_path=${SCRATCH_DISK}/${USER}/DynamicalPredictiveCoding
 mkdir -p ${log_path}
 
 echo "Initializing Conda Environment"
@@ -43,7 +43,7 @@ conda activate ${CONDA_NAME}
 echo "Moving input data to the compute node's scratch space: $SCRATCH_DISK"
 
 # input data directory path on the DFS
-repo_home=/home/${USER}/RelaxedPredictiveCoding
+repo_home=/home/${USER}/DynamicalPredictiveCoding
 cifar_path=${repo_home}/cifar_data
 #src_path=${repo_home}/experiments/examples/mnist/data/input
 
