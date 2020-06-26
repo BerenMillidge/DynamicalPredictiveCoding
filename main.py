@@ -24,20 +24,22 @@ batch_size = 64
 def get_dataset(batch_size,download):
     transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5))])
     trainset = torchvision.datasets.CIFAR10(root='./cifar_data', train=True,
-                                            download=download, transform=transform)
+                                            download=False, transform=transform)
     print("trainset: ", trainset)
     trainloader = torch.utils.data.DataLoader(trainset, batch_size=batch_size,
-                                            shuffle=True, num_workers=1)
+                                            shuffle=True)
     print("trainloader: ", trainloader)
     trainset = list(iter(trainloader))
 
     testset = torchvision.datasets.CIFAR10(root='./cifar_data', train=False,
-                                        download=download, transform=transform)
-    print("testset: ", testset)
+                                        download=False, transform=transform)
     testloader = torch.utils.data.DataLoader(testset, batch_size=batch_size,
-                                            shuffle=False, num_workers=1)
-    print("testloader: ", testloader)
-    testset = list(iter(testset))
+                                            shuffle=True)
+    testset = list(iter(testloader))
+    #for i,(img, label) in enumerate(trainset):
+    #    trainset[i] = (img.reshape(len(img),784) /255 ,label)
+    #for i,(img, label) in enumerate(testset):
+    #    testset[i] = (img.reshape(len(img),784) /255 ,label)
     return trainset, testset
 
 
