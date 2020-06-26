@@ -438,7 +438,7 @@ class PCNet(object):
 
             losses.append(np.mean(np.array(losslist)))
             accs.append(np.mean(np.array(acclist)))
-            test_accs.append(test_accuracy(testset))
+            test_accs.append(self.test_accuracy(testset))
             self.save_model(logdir,savedir, losses,accs,test_accs)
 
 if __name__ == '__main__':
