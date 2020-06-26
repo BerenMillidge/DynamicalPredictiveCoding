@@ -297,6 +297,13 @@ class FCLayer(object):
   def set_weight_parameters(self):
     self.weights = nn.Parameter(self.weights)
 
+  def save_layer(self,logdir,i):
+    np.save(logdir +"/layer_"+str(i)+"_weights.npy",self.weights.detach().cpu().numpy())
+
+  def load_layer(self,logdir,i):
+    weights = np.load(logdir +"/layer_"+str(i)+"_weights.npy")
+    self.weights = set_tensor(torch.from_numpy(weights))
+
 class PCNet(object):
   def __init__(self, layers, n_inference_steps_train, inference_learning_rate, weight_learning_rate,with_amortisation=False,continual_weight_update=False,update_dilation_factor=None,numerical_check=False,device='cpu'):
     self.layers= layers
