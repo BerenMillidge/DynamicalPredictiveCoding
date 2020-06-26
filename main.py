@@ -399,7 +399,7 @@ class PCNet(object):
       #print("Test Infer Acc : ", test_acc_infer)
       return L,self.mus[-1],acc
 
-  def test_accuracy(self,testset):
+  def test_accuracy(self,testset,fixed_predictions=False):
     testaccs = []
     for i,(inp, label) in enumerate(testset):
         L, ypred,acc = self.infer(inp.to(DEVICE),onehot(label).to(DEVICE),fixed_predictions=fixed_predictions)
@@ -438,7 +438,7 @@ class PCNet(object):
 
             losses.append(np.mean(np.array(losslist)))
             accs.append(np.mean(np.array(acclist)))
-            test_accs.append(self.test_accuracy(testset))
+            test_accs.append(self.test_accuracy(testset,fixed_predictions=fixed_predictions))
             self.save_model(logdir,savedir, losses,accs,test_accs)
 
 if __name__ == '__main__':
