@@ -1,5 +1,4 @@
-# trying to get predictive coding networks WORKING without the super strict issues on the constrains and amortisation etc.
-#if this DID work it would be huge. Basically my PC capstone paper so I need to fiddle with it until it does, or at least understand WHY it doesn't
+# trying to get predictive coding networks working without the super strict issues on the constraints and amortisation etc.
 
 import numpy as np
 import matplotlib.pyplot as plt
